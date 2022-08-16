@@ -27,6 +27,9 @@ public class Animal {
         System.out.println(this.nome + " - Animal.respirar()");
     }
 
+    public void farejar() {
+        System.out.println(this.nome + " - Animal.farejar()");
+    }
 
 
     public String getEspecie() {

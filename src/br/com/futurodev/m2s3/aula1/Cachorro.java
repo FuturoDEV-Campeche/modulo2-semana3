@@ -10,4 +10,12 @@ public class Cachorro extends Animal {
         System.out.println(getNome() + " - Cachorro.rosnar()");
     }
 
+    public void cacarComer() {
+        respirar();
+        farejar();
+        cacar();
+        latir();
+        comer();
+    }
+
 }

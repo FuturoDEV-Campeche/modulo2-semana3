@@ -5,7 +5,10 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Aplicação rodando corretamente!");
 
-        Animal cachorroAmora = new Animal("Cachorro", "Amora");
+        Animal cachorroAmora = new Cachorro();
+
+        cachorroAmora.setEspecie("Cachorro");
+        cachorroAmora.setNome("Amora");
         System.out.println(cachorroAmora);
 
         Cachorro cachorroKent = new Cachorro();
