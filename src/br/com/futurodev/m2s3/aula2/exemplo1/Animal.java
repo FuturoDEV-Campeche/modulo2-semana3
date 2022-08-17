@@ -5,6 +5,8 @@ public abstract class Animal {
     private String especie;
     private String nome;
 
+    public abstract void respirar();
+
     public String getEspecie() {
         return especie;
     }
@@ -17,7 +19,7 @@ public abstract class Animal {
         return nome;
     }
 
-    public void setNome(String nome) {
+    protected void setNome(String nome) {
         this.nome = nome;
     }
 
