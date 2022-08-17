@@ -7,6 +7,7 @@ public class Humano extends Animal {
         setNome(nome);
     }
 
+    // Método implementado a partir de um método abstrato
     @Override
     public void respirar() {
         System.out.println("Humano.respirar()");

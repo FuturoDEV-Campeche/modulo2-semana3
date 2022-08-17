@@ -1,8 +1,6 @@
 package br.com.futurodev.m2s3.aula2;
 
-import br.com.futurodev.m2s3.aula2.exemplo1.Animal;
-import br.com.futurodev.m2s3.aula2.exemplo1.Formiga;
-import br.com.futurodev.m2s3.aula2.exemplo1.Humano;
+import br.com.futurodev.m2s3.aula2.exemplo1.*;
 
 public class Main {
 
@@ -17,6 +15,17 @@ public class Main {
         Humano serHumano = new Humano("Gabriel");
         serHumano.respirar();
         System.out.println(serHumano);
+
+
+        System.out.println("Hora de dormir");
+        serHumano.dormir();
+        formiga.dormir();
+
+        Morcego morcego = new Morcego("Batman");
+        morcego.dormir();
+
+        System.out.println(morcego);
+
     }
 
 }
