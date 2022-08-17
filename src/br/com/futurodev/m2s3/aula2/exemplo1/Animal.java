@@ -1,5 +1,6 @@
 package br.com.futurodev.m2s3.aula2.exemplo1;
 
+// Classe abstrata não permite ser instanciada, somente herdada
 public abstract class Animal {
 
     private String especie;
@@ -30,6 +31,7 @@ public abstract class Animal {
         this.nome = nome;
     }
 
+    // Método sobrescrito da classe Object
     @Override
     public String toString() {
         return "Animal{" +
