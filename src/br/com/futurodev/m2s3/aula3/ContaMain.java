@@ -16,8 +16,11 @@ public class ContaMain {
 
         contaGabriel.depositar(200);
         contaGabriel.mostrarExtrato();
-
         System.out.println("Saldo após depósito: " + contaGabriel.mostrarSaldo());
+
+        contaGabriel.sacar(150);
+        contaGabriel.mostrarExtrato();
+        System.out.println("Saldo após saque: " + contaGabriel.mostrarSaldo());
 
     }
 

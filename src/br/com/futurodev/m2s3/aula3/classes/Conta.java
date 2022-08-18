@@ -1,5 +1,6 @@
 package br.com.futurodev.m2s3.aula3.classes;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,8 +25,8 @@ public class Conta implements ContaBancaria {
     }
 
     @Override
-    public double mostrarSaldo() {
-        return saldo;
+    public String mostrarSaldo() {
+        return formatarValor(saldo);
     }
 
     @Override
@@ -37,26 +38,36 @@ public class Conta implements ContaBancaria {
     }
 
     @Override
-    public double sacar(double valor) {
-        return 0;
+    public String sacar(double valor) {
+        if (valor > 0 && saldo >= valor) {
+            historico.add((valor * -1));
+            saldo -= valor;
+        }
+        return formatarValor(saldo);
     }
 
     @Override
-    public double depositar(double valor) {
+    public String depositar(double valor) {
         if (valor > 0) {
             historico.add(valor);
             saldo += valor;
         }
-        return saldo;
+        return formatarValor(saldo);
     }
 
     @Override
-    public double pix(double valor, ContaBancaria destino) {
-        return 0;
+    public String pix(double valor, ContaBancaria destino) {
+        return "";
     }
 
     @Override
-    public double transferir(double valor, ContaBancaria destino) {
-        return 0;
+    public String transferir(double valor, ContaBancaria destino) {
+        return "";
     }
+
+    private String formatarValor(double valor) {
+        DecimalFormat df = new DecimalFormat("#,##0.00");
+        return df.format(valor);
+    }
+
 }
