@@ -33,7 +33,10 @@ public class Conta implements ContaBancaria {
     public void mostrarExtrato() {
         System.out.println("Extrato"); // Cabeçalho
         for (Double valor : historico) { // Percorre todo o array do histórico
-            System.out.println(valor); // Exibe o valor de cada item do histórico
+            System.out.println(
+                    (valor >= 0 ? "+" : "")
+                    + formatarValor(valor)
+            ); // Exibe o valor de cada item do histórico
         }
     }
 
@@ -57,6 +60,7 @@ public class Conta implements ContaBancaria {
 
     @Override
     public String pix(double valor, ContaBancaria destino) {
+
         return "";
     }
 
