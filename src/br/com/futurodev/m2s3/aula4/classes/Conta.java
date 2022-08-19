@@ -53,6 +53,10 @@ public abstract class Conta implements ContaBancaria {
         return sacar(Double.parseDouble(valor.toString()));
     }
 
+    public String sacar(double valor, double taxa) {
+        return formatarValor(saldo);
+    }
+
     @Override
     public String depositar(double valor) {
         if (valor > 0) {

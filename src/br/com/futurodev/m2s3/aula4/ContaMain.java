@@ -9,7 +9,7 @@ public class ContaMain {
     public static void main(String[] args) {
         System.out.println("Sistema bancário online!");
 
-        Conta contaGabriel = new ContaCorrente(
+        ContaCorrente contaGabriel = new ContaCorrente(
                 "Gabriel", "111.222.333-44",
                 1, 12345
         );
@@ -55,6 +55,16 @@ public class ContaMain {
         System.out.println("Saldo da Sophiye: " + contaSophiye.mostrarSaldo());
 
 
+
+        // Sobrecarga - Overload
+
+        contaGabriel.sacar(100.50);
+        contaGabriel.sacar((Integer) 100);
+        contaGabriel.sacar(100, 20);
+
+        // Sobrescrita - Override
+
+        contaGabriel.sacar(100.5, 20);
 
     }
 

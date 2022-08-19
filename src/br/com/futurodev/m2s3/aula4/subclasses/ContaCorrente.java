@@ -8,4 +8,10 @@ public class ContaCorrente extends Conta {
         super(nome, cpf, agencia, numero, "Conta Corrente");
     }
 
+    @Override
+    public String sacar(double valor, double taxa) {
+        System.out.println("Função não implementada!");
+        return super.mostrarSaldo();
+    }
+
 }
