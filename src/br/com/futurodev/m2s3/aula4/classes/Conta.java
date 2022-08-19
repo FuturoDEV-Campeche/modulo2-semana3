@@ -1,10 +1,10 @@
-package br.com.futurodev.m2s3.aula3.classes;
+package br.com.futurodev.m2s3.aula4.classes;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Conta implements ContaBancaria {
+public abstract class Conta implements ContaBancaria {
 
     private String nome;
     final private String CPF;
@@ -16,7 +16,6 @@ public class Conta implements ContaBancaria {
 
     private double saldo = 0.0;
     private List<Double> historico = new ArrayList<>();
-
 
     public Conta(String nome, String cpf, int agencia, int numero, String tipo) {
         this.nome = nome;
@@ -48,6 +47,10 @@ public class Conta implements ContaBancaria {
             diminuirSaldo(valor);
         }
         return formatarValor(saldo);
+    }
+
+    public String sacar(Integer valor) {
+        return sacar(Double.parseDouble(valor.toString()));
     }
 
     @Override

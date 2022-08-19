@@ -1,21 +1,22 @@
-package br.com.futurodev.m2s3.aula3;
+package br.com.futurodev.m2s3.aula4;
 
-import br.com.futurodev.m2s3.aula3.classes.Conta;
-import br.com.futurodev.m2s3.aula3.classes.ContaBancaria;
+import br.com.futurodev.m2s3.aula4.classes.Conta;
+import br.com.futurodev.m2s3.aula4.classes.ContaBancaria;
+import br.com.futurodev.m2s3.aula4.subclasses.ContaCorrente;
 
 public class ContaMain {
 
     public static void main(String[] args) {
         System.out.println("Sistema bancário online!");
 
-        ContaBancaria contaGabriel = new Conta(
+        Conta contaGabriel = new ContaCorrente(
                 "Gabriel", "111.222.333-44",
-                1, 12345, "Corrente"
+                1, 12345
         );
 
-        ContaBancaria contaSophiye = new Conta(
+        Conta contaSophiye = new ContaCorrente(
                 "Sophiye Simon", "222.333.444-55",
-                1, 54321, "Corrente"
+                1, 54321
         );
 
         System.out.println("Saldo inicial: " + contaGabriel.mostrarSaldo());
