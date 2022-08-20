@@ -1,5 +1,7 @@
 package br.com.futurodev.m2s3.exercicios.ex1.classes;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Funcionario extends Pessoa {
@@ -7,9 +9,15 @@ public class Funcionario extends Pessoa {
     private Date dataAdmissao;
 
     // Construtor
-    public Funcionario(String nome, String genero, Date dataAdmissao) {
+    public Funcionario(
+            String nome,
+            String genero,
+            String dataAdmissao
+    ) throws ParseException {
         super(nome, genero);
-        this.dataAdmissao = dataAdmissao; // Atribui a dataAdmissao do parâmetro à dataAdmissao da instância
+        // Transformador de String para Data
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+        this.dataAdmissao = formato.parse(dataAdmissao); // Atribui a dataAdmissao do parâmetro à dataAdmissao da instância
     }
 
     // Comportamento de registrar o ponto

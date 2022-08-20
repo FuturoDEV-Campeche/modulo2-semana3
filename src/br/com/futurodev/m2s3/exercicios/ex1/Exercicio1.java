@@ -3,6 +3,7 @@ package br.com.futurodev.m2s3.exercicios.ex1;
 import br.com.futurodev.m2s3.exercicios.ex1.classes.Funcionario;
 import br.com.futurodev.m2s3.exercicios.ex1.classes.Paciente;
 
+import java.text.ParseException;
 import java.util.Date;
 
 /*
@@ -19,15 +20,16 @@ Obs.: Utilize encapsulamento e as convenções em todas as classes criadas.
 */
 public class Exercicio1 {
 
-    public static void main(String[] args) {
-        Paciente paciente1 = new Paciente("Gabriel", "Masculino", new Date());
-        Funcionario funcionario1 = new Funcionario("Ritierri", "Masculino", new Date());
+    public static void main(String[] args) throws ParseException {
+
+        Paciente paciente1 = new Paciente("Gabriel", "Masculino", "18/08/2022");
+        Funcionario funcionario1 = new Funcionario("Ritierri", "Masculino", "10/07/2021");
 
         System.out.println("Paciente internado às: " + paciente1.getDataInternacao());
+        paciente1.consumirMedicamentos();
 
-        System.out.println("Funcionario 1 registrando o ponto");
+        System.out.println("Funcionario 1 admtido: " + funcionario1.getDataAdmissao());
         funcionario1.registrarPonto();
-
 
     }
 

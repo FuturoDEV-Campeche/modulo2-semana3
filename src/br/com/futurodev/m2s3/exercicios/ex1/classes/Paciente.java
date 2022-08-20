@@ -1,5 +1,7 @@
 package br.com.futurodev.m2s3.exercicios.ex1.classes;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Paciente extends Pessoa {
@@ -10,10 +12,12 @@ public class Paciente extends Pessoa {
     public Paciente(
             String nome,
             String genero,
-            Date dataInternacao
-    ) {
+            String dataInternacao
+    ) throws ParseException {
         super(nome, genero);
-        this.dataInternacao = dataInternacao;
+        // Transformador de String para Data
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+        this.dataInternacao = formato.parse(dataInternacao);
     }
 
     // Comportamento de consumir medicamentos
